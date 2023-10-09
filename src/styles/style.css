@@ -37,6 +37,9 @@ img {
 
 .contact-item__image img {
     width: 64px;
+    height: 64px;
+    object-fit: cover;
+    object-position: top;
     border-radius: 50%;
 }
 
@@ -51,8 +54,12 @@ img {
     padding: 4px 0;
 }
 
+.contact-item__phone-number {
+    font-weight: 500;
+}
+
 .contact-item__username {
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 .contact-item__delete {
