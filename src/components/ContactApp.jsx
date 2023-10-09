@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactList from './ContactList';
-import { getData } from '../data';
+import { getData } from '../utils/data';
 
 // Parent component untuk semua child component
 const ContactApp = () => {
