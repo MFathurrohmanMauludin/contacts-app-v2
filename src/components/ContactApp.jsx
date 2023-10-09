@@ -14,4 +14,11 @@ const ContactApp = () => {
     );
 }
 
-export default ContactApp
+export default ContactApp;
+
+/*
+    praktik unidirectional data flow sangat kental di React. Sekali lagi, di React data 
+    selalu hidup (berada) di parent component. Jika child component membutuhkannya, data 
+    akan dikirim secara drilling (menurun) mulai dari komponen ContactList, ContactItem, 
+    ContactItemImage, dan ContactItemBody yang memanfaatkan properti.
+*/

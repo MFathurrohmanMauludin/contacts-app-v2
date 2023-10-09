@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Child Component
 function ContactItemBody({ name, phone_number, tag }) {
     return (
         <div className="contact-item__body">
