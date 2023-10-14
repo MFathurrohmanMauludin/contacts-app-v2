@@ -15,8 +15,8 @@ class ContactApp extends React.Component {
 
 
     onDeleteHandler(id) {
-        const contacts = this.state.contacts.filter(contact => contact.id !== id);
-        this.setState({ contacts });
+        const contacts = this.state.contacts.filter(contact => contact.id !== id); //  menyimpan data contacts di dalam this.state agar perubahan datanya memicu render UI.
+        this.setState({ contacts }); // mengubah data this.state menggunakan this.setState
     }
 
     render() {
