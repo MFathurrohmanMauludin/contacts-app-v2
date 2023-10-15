@@ -6,7 +6,8 @@ import ContactInput from './ContactInput';
 // Parent component untuk semua child component
 class ContactApp extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
         this.state = {
             contacts: getData(),
         }
@@ -23,7 +24,7 @@ class ContactApp extends React.Component {
     }
 
     // Menambahkan kontak baru
-    onAddContactHandler({ name, tag, phone_number }) {
+    onAddContactHandler({ name, phone_number, tag }) {
         // prevState -> mengambil data/state sebelumnya
         this.setState((prevState) => {
             return {

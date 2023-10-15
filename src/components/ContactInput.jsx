@@ -3,7 +3,7 @@ import React from 'react';
 
 class ContactInput extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         // inisialisasi state (data)
         this.state = {
@@ -23,29 +23,28 @@ class ContactInput extends React.Component {
     onNameChangeEventHandler(event) {
         this.setState(() => {
             return {
-                name: event.target.value
+                name: event.target.value,
             }
         });
-    }
-
-    onTagChangeEventHandler(event) {
-        this.setState(() => {
-            return {
-                tag: event.target.values,
-            }
-        })
     }
 
     onPhoneNumberChangeEventHandler(event) {
         this.setState(() => {
             return {
-                phone_number: event.target.values,
+                phone_number: event.target.value,
             }
         })
     }
 
+    onTagChangeEventHandler(event) {
+        this.setState(() => {
+            return {
+                tag: event.target.value,
+            }
+        })
+    }
 
-    onSubmitChangeEventHandler(event) {
+    onSubmitEventHandler(event) {
         // menghentikan aksi default dari tombol submit
         event.preventDefault();
         this.props.addContact(this.state);
@@ -58,11 +57,11 @@ class ContactInput extends React.Component {
 
     render() {
         return (
-            <form className='contact-input' onSubmit={this.onSubmitChangeEventHandler}>
-                <input type='text' placeholder='Name' value={this.state.name} onChange={this.onNameChangeEventHandler} />
-                <input type='text' placeholder='Phone Number' value={this.state.phone_number} onChange={this.onTagChangeEventHandler} />
-                <input type='text' placeholder='Tag' value={this.state.tag} onChange={this.onTagChangeEventHandler} />
-                <button type='submit'>Add Contact</button>
+            <form className="contact-input" onSubmit={this.onSubmitEventHandler}>
+                <input type="text" placeholder="Name" value={this.state.name} onChange={this.onNameChangeEventHandler} />
+                <input type="text" placeholder="Phone Number" value={this.state.phone_number} onChange={this.onPhoneNumberChangeEventHandler} />
+                <input type="text" placeholder="Tag" value={this.state.tag} onChange={this.onTagChangeEventHandler} />
+                <button type="submit">Add Contact</button>
             </form>
         )
     }
