@@ -11,6 +11,7 @@ class ContactApp extends React.Component {
         }
 
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
+        this.onAddContactHandler = this.onAddContactHandler.bind(this);
     }
 
     // Menghapus data di UI
@@ -18,6 +19,25 @@ class ContactApp extends React.Component {
         const contacts = this.state.contacts.filter(contact => contact.id !== id); //  menyimpan data contacts di dalam this.state agar perubahan datanya memicu render UI.
         this.setState({ contacts }); // mengubah data this.state menggunakan this.setState
         console.log(contacts);
+    }
+
+    // Menambahkan kontak baru
+    onAddContactHandler({ name, tag, phone_number }) {
+        // prevState -> mengambil data/state sebelumnya
+        this.setState((prevState) => {
+            return {
+                contacts: [
+                    ...prevState.contacts,
+                    {
+                        id: +new Date(),
+                        name,
+                        phone_number,
+                        tag,
+                        imageUrl: '/images/default.jpg'
+                    }
+                ]
+            }
+        })
     }
 
     render() {

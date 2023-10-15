@@ -8,12 +8,15 @@ class ContactInput extends React.Component {
         // inisialisasi state (data)
         this.state = {
             name: '',
+            phone_number: '',
             tag: '',
         }
 
-        this.onNameChangeEventHandler
-        this.onTagChangeEventHandler
-        this.onSubmitChangeEventHandler
+
+        this.onNameChangeEventHandler = this.onNameChangeEventHandler.bind(this);
+        this.onTagChangeEventHandler = this.onTagChangeEventHandler.bind(this);
+        this.onPhoneNumberChangeEventHandler = this.onPhoneNumberChangeEventHandler.bind(this);
+        this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
     }
 
     // event handler
@@ -33,6 +36,15 @@ class ContactInput extends React.Component {
         })
     }
 
+    onPhoneNumberChangeEventHandler(event) {
+        this.setState(() => {
+            return {
+                phone_number: event.target.values,
+            }
+        })
+    }
+
+
     onSubmitChangeEventHandler(event) {
         // menghentikan aksi default dari tombol submit
         event.preventDefault();
@@ -48,6 +60,7 @@ class ContactInput extends React.Component {
         return (
             <form className='contact-input' onSubmit={this.onSubmitChangeEventHandler}>
                 <input type='text' placeholder='Name' value={this.state.name} onChange={this.onNameChangeEventHandler} />
+                <input type='text' placeholder='Phone Number' value={this.state.phone_number} onChange={this.onTagChangeEventHandler} />
                 <input type='text' placeholder='Tag' value={this.state.tag} onChange={this.onTagChangeEventHandler} />
                 <button type='submit'>Add Contact</button>
             </form>
