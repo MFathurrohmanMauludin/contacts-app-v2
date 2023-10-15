@@ -13,10 +13,11 @@ class ContactApp extends React.Component {
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
     }
 
-
+    // Menghapus data di UI
     onDeleteHandler(id) {
         const contacts = this.state.contacts.filter(contact => contact.id !== id); //  menyimpan data contacts di dalam this.state agar perubahan datanya memicu render UI.
         this.setState({ contacts }); // mengubah data this.state menggunakan this.setState
+        console.log(contacts);
     }
 
     render() {
